@@ -11,13 +11,13 @@ app/
 │   │       └── Book.php
 │   ├── Events/：イベント駆動用（複雑・複数ロジックになった場合使用）
 │   │   └── BookAdded.php
-│   ├── Repositories/：リポジトリクラスのインターフェース
-│   │   └── Book/
-│   │       └── BookRepositoryInterface.php
 │   ├── ValueObjects/：値オブジェクト　例：BookId
 │   │   └── BookId.php
 │   ├── Exceptions/：例外を管理
 ├── UseCases/：アプリケーションのビジネスロジックを実行するユースケースインタラクタとそのインターフェース
+│   ├── Common/：共通のCRUD処理を記載した抽象クラス
+│   │   └── BaseInteractor.php
+│   │   └── BaseInteractorInterface.php
 │   ├── Book/
 │   │   ├── AddBook/
 │   │   │   ├── AddBook.php: ユースケースのエントリポイント
@@ -32,9 +32,12 @@ app/
 │   │       ├── Interactor.php
 │   │       └── InteractorInterface.php
 ├── Infrastructure/：インフラストラクチャ層　データアクセスや外部サービスとの統合を扱う
+│   ├── Common/
+│   │   ├── RepositoryInterface.php：共通のCRUDメソッドをに対するインターフェース
 │   ├── Book/
+│   │   ├── BookRepositoryInterface.php：RepositoryInterfaceを継承
 │   │   ├── Eloquent/
-│   │       └── EloquentBookRepository.php：ORMを使用したリポジトリ実装
+│   │   |    └── EloquentBookRepository.php：ORMを使用したリポジトリ実装
 │   │   └── PostgreSQL/
 │   │       └── PostgreBookRepository.php：生のPostgreSQLクエリを使用したリポジトリ実装
 ├── Http/
