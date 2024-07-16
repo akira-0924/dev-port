@@ -51,6 +51,8 @@ app/
 │   │   ├── Book/
 │   │       └── BookResource.php
 │   └── Middleware/
+└── Models/：Eloquent ORMを使用してデータベース操作を担当
+        └── Book.php
 └── Services/：外部サービスの実装
 │       └── NotificationService.php
 ├── Providers/：InteractorとRepositoryクラスの依存注入
