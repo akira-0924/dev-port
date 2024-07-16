@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources\Book;
 
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class GetBookResource extends JsonResource
@@ -12,8 +11,13 @@ class GetBookResource extends JsonResource
      *
      * @return array<string, mixed>
      */
-    public function toArray(Request $request): array
+    public function toArray($request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->getId(),
+            'title' => $this->getTitle(),
+            'author' => $this->getAuthor(),
+            'description' => $this->getDescription(),
+        ];
     }
 }
