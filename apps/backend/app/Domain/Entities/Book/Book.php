@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Entitiees\Book;
+namespace App\Domain\Entities\Book;
 
 class Book
 {
