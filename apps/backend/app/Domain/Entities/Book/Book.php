@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Domain\Entities\Book;
+use App\Domain\ValueObjects\BookId;
+
 
 class Book
 {
-    private string $id;
+    private BookId $id;
     private string $title;
     private string $author;
     private ?string $description;
@@ -17,7 +19,7 @@ class Book
         $this->description = $description;
     }
 
-    public function getId(): string
+    public function getId(): BookId
     {
         return $this->id;
     }

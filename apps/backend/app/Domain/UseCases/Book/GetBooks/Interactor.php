@@ -2,8 +2,9 @@
 
 namespace App\UseCases\Book\GetBook;
 
+use App\Domain\Entities\Book\Book;
 use App\Infrastructure\Book\BookRepositoryInterface;
-use App\Domain\ValueObjects\BookId;
+
 
 class Interactor implements InteractorInterface
 {
@@ -16,12 +17,7 @@ class Interactor implements InteractorInterface
 
     public function handle(Request $request): Response
     {
-        $bookId = new BookId($request->getBookId());
-        $book = $this->bookRepository->findById($bookId);
-
-        if ($book === null) {
-            throw new \Exception('Book not found');
-        }
+        $book = $this->bookRepository->findById($request->getBookId());
 
         return new Response($book);
     }

@@ -2,17 +2,17 @@
 
 namespace App\UseCases\Book\GetBook;
 
-use PhpParser\Node\Expr\Cast\String_;
+use App\Domain\ValueObjects\BookId;
 
 class Request
 {
-    private string $bookId;
+    private BookId $bookId;
     public function __construct(string $bookId)
     {
         $this->bookId = $bookId;
     }
 
-    public function getBookId(): string
+    public function getBookId(): BookId
     {
         return $this->bookId;
     }
