@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Infrastructure\Book\Eloquent;
+namespace App\Domain\Infrastructure\Book\Eloquent;
 
 use App\Domain\Entities\Book\Book as DomainBook;
 use App\Domain\ValueObjects\BookId;
-use App\Infrastructure\Book\BookRepositoryInterface;
+use App\Domain\Infrastructure\Book\BookRepositoryInterface;
 use App\Models\Book as EloquentBook;
 
 class EloquentBookRepository implements BookRepositoryInterface

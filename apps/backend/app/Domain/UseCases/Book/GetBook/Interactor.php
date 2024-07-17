@@ -1,9 +1,9 @@
 <?php
 
-namespace App\UseCases\Book\GetBook;
+namespace App\Domain\UseCases\Book\GetBook;
 
 use App\Domain\Entities\Book\Book;
-use App\Infrastructure\Book\BookRepositoryInterface;
+use App\Domain\Infrastructure\Book\BookRepositoryInterface;
 
 
 class Interactor implements InteractorInterface

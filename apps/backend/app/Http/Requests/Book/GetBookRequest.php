@@ -22,7 +22,14 @@ class GetBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'book_id' => 'required|string',
+            'book_id' => 'required|integer|exists:books,id',
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'book_id' => $this->route('book_id'),
+        ]);
     }
 }

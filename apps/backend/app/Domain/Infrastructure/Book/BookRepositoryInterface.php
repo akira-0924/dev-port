@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Book;
+namespace App\Domain\Infrastructure\Book;
 
 use App\Domain\Entities\Book\Book;
 use App\Domain\ValueObjects\BookId;

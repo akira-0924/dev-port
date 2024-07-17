@@ -1,6 +1,6 @@
 <?php
 
-namespace App\UseCases\Book\GetBook;
+namespace App\Domain\UseCases\Book\GetBook;
 
 use App\Domain\Entities\Book\Book;
 

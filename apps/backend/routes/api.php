@@ -19,9 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::controller(BookController::class)
-//     ->prefix('/books')
-//     ->group(function () {
-//         Route::get('/{id}', 'show');
-//     });
-Route::get('books/{book_id}', [BookController::class, 'show']);
+Route::controller(BookController::class)
+    ->prefix('/book')
+    ->group(function () {
+        Route::get('/{book_id}', 'show');
+    });
+// Route::get('book/{book_id}', [BookController::class, 'index']);
