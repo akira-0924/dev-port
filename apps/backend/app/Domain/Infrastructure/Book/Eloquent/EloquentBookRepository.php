@@ -3,7 +3,7 @@
 namespace App\Domain\Infrastructure\Book\Eloquent;
 
 use App\Domain\Entities\Book\Book as DomainBook;
-use App\Domain\ValueObjects\BookId;
+use App\Domain\ValueObjects\Book\BookId;
 use App\Domain\Infrastructure\Book\BookRepositoryInterface;
 use App\Models\Book as EloquentBook;
 
@@ -15,9 +15,11 @@ class EloquentBookRepository implements BookRepositoryInterface
         if ($eloquentBook === null) {
             return null;
         }
+        // dd($eloquentBook->id);
+        dd(new BookId($eloquentBook->id));
 
         return new DomainBook(
-            $eloquentBook->id,
+            new BookId($eloquentBook->id),
             $eloquentBook->title,
             $eloquentBook->author,
             $eloquentBook->description

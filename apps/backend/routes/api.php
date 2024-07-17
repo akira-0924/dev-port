@@ -24,4 +24,3 @@ Route::controller(BookController::class)
     ->group(function () {
         Route::get('/{book_id}', 'show');
     });
-// Route::get('book/{book_id}', [BookController::class, 'index']);

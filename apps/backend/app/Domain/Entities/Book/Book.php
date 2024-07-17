@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Domain\Entities\Book;
-use App\Domain\ValueObjects\BookId;
+use App\Domain\ValueObjects\Book\BookId;
 
 
 class Book
@@ -11,7 +11,7 @@ class Book
     private string $author;
     private ?string $description;
 
-    private function __construct(string $id, string $title, string $author, string $description)
+    public function __construct(BookId $id, string $title, string $author, string $description)
     {
         $this->id = $id;
         $this->title = $title;
