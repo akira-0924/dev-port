@@ -6,7 +6,7 @@ class BookId
 {
     private string $id;
 
-    public function  __construct(string $id)
+    public function  __construct(string | int $id)
     {
         if(empty($id)) {
             throw new \InvalidArgumentException('Book ID cannot be empty');

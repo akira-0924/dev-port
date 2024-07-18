@@ -15,8 +15,6 @@ class EloquentBookRepository implements BookRepositoryInterface
         if ($eloquentBook === null) {
             return null;
         }
-        // dd($eloquentBook->id);
-        dd(new BookId($eloquentBook->id));
 
         return new DomainBook(
             new BookId($eloquentBook->id),

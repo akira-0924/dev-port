@@ -19,9 +19,9 @@ class Book
         $this->description = $description;
     }
 
-    public function getId(): BookId
+    public function getId(): string
     {
-        return $this->id;
+        return $this->id->getValue();
     }
 
     public function getTitle(): string
