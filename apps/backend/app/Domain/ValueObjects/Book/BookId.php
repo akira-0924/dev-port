@@ -19,7 +19,7 @@ class BookId
         return $this->id;
     }
 
-    public function equals(BookId $other): bool
+    public function equals(string $other): bool
     {
         return $this->id === $other->getValue();
     }

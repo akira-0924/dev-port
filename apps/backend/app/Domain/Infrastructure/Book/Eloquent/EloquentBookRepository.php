@@ -3,21 +3,20 @@
 namespace App\Domain\Infrastructure\Book\Eloquent;
 
 use App\Domain\Entities\Book\Book as DomainBook;
-use App\Domain\ValueObjects\Book\BookId;
 use App\Domain\Infrastructure\Book\BookRepositoryInterface;
 use App\Models\Book as EloquentBook;
 
 class EloquentBookRepository implements BookRepositoryInterface
 {
-    public function findById(BookId $bookId): ?DomainBook
+    public function findById(string $bookId): ?DomainBook
     {
-        $eloquentBook = EloquentBook::find($bookId->getValue());
+        $eloquentBook = EloquentBook::find($bookId);
         if ($eloquentBook === null) {
             return null;
         }
 
         return new DomainBook(
-            new BookId($eloquentBook->id),
+            $eloquentBook->id,
             $eloquentBook->title,
             $eloquentBook->author,
             $eloquentBook->description

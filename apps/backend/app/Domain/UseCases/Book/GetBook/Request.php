@@ -2,17 +2,17 @@
 
 namespace App\Domain\UseCases\Book\GetBook;
 
-use App\Domain\ValueObjects\Book\BookId;
+
 
 class Request
 {
-    private BookId $bookId;
+    private string $bookId;
     public function __construct(string $bookId)
     {
-        $this->bookId = new BookId($bookId);
+        $this->bookId = $bookId;
     }
 
-    public function getBookId(): BookId
+    public function getBookId(): string
     {
         return $this->bookId;
     }
