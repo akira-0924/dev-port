@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Domain\Infrastructure\Book\Eloquent;
+namespace App\Domain\Infrastructure\Book;
 
 use App\Domain\Entities\Book\Book as DomainBook;
 use App\Domain\Infrastructure\Book\BookRepositoryInterface;
 use App\Models\Book as EloquentBook;
 
-class EloquentBookRepository implements BookRepositoryInterface
+class BookRepository implements BookRepositoryInterface
 {
     public function findById(string $bookId): ?DomainBook
     {

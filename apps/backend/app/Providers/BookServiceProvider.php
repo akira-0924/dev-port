@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Domain\UseCases\Book\GetBook\Interactor;
 use App\Domain\UseCases\Book\GetBook\InteractorInterface;
 use App\Domain\Infrastructure\Book\BookRepositoryInterface;
-use App\Domain\Infrastructure\Book\Eloquent\EloquentBookRepository;
+use App\Domain\Infrastructure\Book\BookRepository;
 
 class BookServiceProvider extends ServiceProvider
 {
@@ -16,7 +16,7 @@ class BookServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(InteractorInterface::class, Interactor::class);
-        $this->app->bind(BookRepositoryInterface::class, EloquentBookRepository::class);
+        $this->app->bind(BookRepositoryInterface::class, BookRepository::class);
     }
 
     /**
