@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Domain\UseCases\Book\GetBook\GetBookDomain;
+use App\Domain\Entities\Book\Book as DomainBook;
 
 class Book extends Model
 {
@@ -16,18 +16,14 @@ class Book extends Model
         'description'
     ];
 
-    /**
-     * ドメインエンティティを生成して返す。
-     *
-     * @return BookDomain
-     */
-    public function createBookDomain():GetBookDomain
+
+    public function createBookDomain():DomainBook
     {
         $id = $this->id;
         $title = $this->title;
         $author = $this->author;
         $description = $this->description;
 
-        return new GetBookDomain($id, $title, $author, $description);
+        return new DomainBook($id, $title, $author, $description);
     }
 }

@@ -10,16 +10,11 @@ class BookRepository implements BookRepositoryInterface
 {
     public function findById(string $bookId): ?DomainBook
     {
-        $eloquentBook = EloquentBook::find($bookId);
-        if ($eloquentBook === null) {
+        $book = EloquentBook::find($bookId);
+        if ($book === null) {
             return null;
         }
 
-        return new DomainBook(
-            $eloquentBook->id,
-            $eloquentBook->title,
-            $eloquentBook->author,
-            $eloquentBook->description
-        );
+        return $book->createBookDomain();
     }
 }
