@@ -17,6 +17,7 @@ class Book extends Model
     ];
 
 
+    //Entityクラスを生成して返す
     public function createBookDomain():DomainBook
     {
         $id = $this->id;

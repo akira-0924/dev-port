@@ -2,6 +2,7 @@
 
 namespace App\Domain\ValueObjects\Book;
 
+// 一旦は使わない
 class BookId
 {
     private string $id;
