@@ -2,6 +2,8 @@
 
 クリーンアーキテクチャ（DDD）の原則に従った以下の構成案を検討。
 デザインパターン的には Repository パターン、Factory パターンを採用。
+データアクセスは Eloquent を使用するが、Entity クラスを定義して、Eloquent Model に依存しないドメインオブジェクトを生成する。
+ValueObject は一旦使用なし。
 
 ```
 app/
